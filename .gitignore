@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+archive/
+brain_tumor_dataset/
+results/
+*.zip
+.env
