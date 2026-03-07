@@ -1,0 +1,5 @@
+[server]
+headless = true
+
+[global]
+python_version = "3.10"
