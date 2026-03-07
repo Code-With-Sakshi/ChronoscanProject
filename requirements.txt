@@ -5,5 +5,4 @@ pandas
 scikit-image
 pillow
 gdown
-tensorflow-cpu==2.15.0
-
+tensorflow==2.15.0
