@@ -6,7 +6,8 @@ numpy
 pandas
 scikit-image
 scikit-learn
-tensorflow-cpu
+tensorflow-cpu==2.13.0
 pillow
 gdown
+
 
