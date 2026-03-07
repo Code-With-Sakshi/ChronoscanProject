@@ -1,5 +1,11 @@
 flask
 flask-cors
+streamlit
 opencv-python
 numpy
+pandas
+scikit-image
+scikit-learn
+tensorflow
 pillow
+gdown
