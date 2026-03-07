@@ -1,77 +1,23 @@
 
 
-# # streamlit_app.py
-# import streamlit as st
-# import cv2
-# import tempfile
-# import os
-# from ml.change_detector import analyze_change
-# from ml.report import generate_report
 
-# st.set_page_config(page_title="ChronoScan", layout="centered")
-
-# st.title("🧠 ChronoScan – Tumor Change Detection")
-
-# day0 = st.file_uploader("Upload Day-0 MRI", ["png", "jpg", "jpeg"])
-# day5 = st.file_uploader("Upload Day-5 MRI", ["png", "jpg", "jpeg"])
-
-# if day0 and day5:
-#     with tempfile.NamedTemporaryFile(delete=False) as f0:
-#         f0.write(day0.read())
-#         p0 = f0.name
-
-#     with tempfile.NamedTemporaryFile(delete=False) as f5:
-#         f5.write(day5.read())
-#         p5 = f5.name
-
-#     st.subheader("🖼 Uploaded Images")
-#     st.image([day0, day5], caption=["Day-0", "Day-5"], width=300)
-
-#     mask0, mask5, percent = analyze_change(p0, p5)
-#     report = generate_report(percent)
-
-#     st.success(f"📈 Tumor Change: {percent:.2f}%")
-#     st.info(report)
-
-#     st.subheader("🔬 Tumor Masks")
-#     st.image(mask0, caption="Day-0 Mask", clamp=True)
-#     st.image(mask5, caption="Day-5 Mask", clamp=True)
-
-#     st.subheader("📊 Change Map")
-#     st.image("results/change_map.png")
-
-#     # Simple graph
-#     st.subheader("📉 Tumor Area Change")
-#     st.line_chart([mask0.sum(), mask5.sum()])
-
-#     os.remove(p0)
-#     os.remove(p5)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# streamlit_app.py
 import streamlit as st
 import cv2
 import tempfile
 import os
 import sqlite3
+import gdown
+
 from ml.change_detector import analyze_change
 from ml.report import generate_report
+
+# --------- DOWNLOAD MODEL IF NOT PRESENT ----------
+MODEL_PATH = "brain_tumor_model.h5"
+
+if not os.path.exists(MODEL_PATH):
+    url = "https://drive.google.com/uc?id=1b5i-Al56v9RESDLoIZlCCw7PJ62qXrcm"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
 
 # ---------------- CONFIG ----------------
 st.set_page_config(page_title="ChronoScan", layout="centered")
@@ -178,3 +124,4 @@ else:
 
         os.remove(p0)
         os.remove(p5)
+
