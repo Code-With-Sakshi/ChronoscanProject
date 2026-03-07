@@ -1,11 +1,12 @@
 flask
 flask-cors
 streamlit
-opencv-python
+opencv-python-headless
 numpy
 pandas
 scikit-image
 scikit-learn
-tensorflow
+tensorflow-cpu
 pillow
 gdown
+
