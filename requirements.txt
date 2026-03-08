@@ -1,9 +1,9 @@
 streamlit
-opencv-python
+opencv-python-headless
 numpy
 pandas
 scikit-image
 scikit-learn
-tensorflow
 pillow
 gdown
+tensorflow==2.13.0
