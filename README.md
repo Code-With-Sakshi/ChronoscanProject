@@ -5,6 +5,13 @@ The system compares two MRI scans taken at different time intervals and highligh
 
 This project demonstrates how **machine learning and image processing** can assist medical analysis by providing automated tumor change detection.
 
+
+## Live Demo
+
+Try the application here:
+
+https://chronoscanproject-m3dt9jola8de5bxd5tken2.streamlit.app/
+
 ---
 
 # 🚀 Features
